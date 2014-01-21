@@ -8,12 +8,8 @@ namespace Watpage
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
-            routes.MapRoute(
-                name: "Page",
-                url: "{name}",
-                defaults: new { controller = "Page", action = "Index" }
-            );
+            routes.MapRoute("Resource", "Resource/{page}/{name}", new { controller = "Page", action = "Resource" });
+            routes.MapRoute("Page", "{page}", new { controller = "Page", action = "Index" });
         }
     }
 }
