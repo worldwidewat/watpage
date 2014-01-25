@@ -11,7 +11,7 @@ namespace Watpage.Controllers
 {
     public class PageController : Controller
     {
-        public async Task<ActionResult> Index(string page)
+        public async Task<ActionResult> Index(string page = "watpage")
         {
             return await GetResult(string.Format(ConfigurationManager.AppSettings["PageUrlFormat"], page));
         }

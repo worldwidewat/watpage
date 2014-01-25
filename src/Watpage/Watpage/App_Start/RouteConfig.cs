@@ -9,7 +9,7 @@ namespace Watpage
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.MapRoute("Resource", "Resource/{page}/{name}", new { controller = "Page", action = "Resource" });
-            routes.MapRoute("Page", "{page}", new { controller = "Page", action = "Index" });
+            routes.MapRoute("Page", "{page}", new { controller = "Page", action = "Index", page = UrlParameter.Optional });
         }
     }
 }
